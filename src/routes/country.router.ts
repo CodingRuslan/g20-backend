@@ -3,7 +3,7 @@ import { CountryController } from '../controllers';
 
 const router = express.Router();
 
-router.get("/", async (_req, res) => {
+router.get("/", async (req, res) => {
   const controller = new CountryController();
   const response = await controller.getCountries();
   return res.send(response);

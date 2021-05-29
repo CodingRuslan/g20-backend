@@ -5,9 +5,9 @@ import {
 } from "../repositories/link.repository";
 
 @Route("links")
-@Tags("Link")
+@Tags("Links")
 export default class LinkController {
-  @Get("/")
+  @Get("/header-links")
   public async getLinks(): Promise<Array<Link>> {
     return getLinks();
   }

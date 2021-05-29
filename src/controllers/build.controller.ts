@@ -3,6 +3,8 @@ import {Build} from "../entities";
 import {
   getBuilds,
   getBuild,
+  createBuild,
+  IBuildPayload
 } from "../repositories/build.repository";
 
 @Route("builds")
@@ -12,6 +14,13 @@ export default class BuildController {
   public async getBuilds(): Promise<Array<Build>> {
     return getBuilds();
   }
+
+
+  @Post("/create-build")
+  public async createBuild(@Body() body: IBuildPayload): Promise<Build> {
+    return createBuild(body);
+  }
+
 
   @Get("/:id")
   public async getCountry(@Path() id: string): Promise<Build | null> {

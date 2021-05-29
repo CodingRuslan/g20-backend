@@ -5,8 +5,8 @@ import {
   getTrade,
 } from "../repositories/trade.repository";
 
-@Route("trade")
-@Tags("Trade")
+@Route("trades")
+@Tags("Trades")
 export default class TradeController {
   @Get("/")
   public async getTrades(): Promise<Array<Trade>> {
