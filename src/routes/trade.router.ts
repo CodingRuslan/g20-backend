@@ -11,5 +11,11 @@ router.get("/", async (req: Request, res: Response) => {
   return res.send(response);
 });
 
+router.get('/ads', async (req: Request, res: Response) => {
+  const controller = new TradeController();
+  const trades = await controller.getAllAds();
+  return res.send(trades);
+});
+
 
 export default router;
