@@ -29,5 +29,11 @@ router.post('/delete', async (req: Request, res: Response) => {
   return res.send(trades);
 });
 
+router.post('/create-trade', async (req: Request, res: Response) => {
+  const controller = new TradeController();
+  const trade = await controller.createTrade(req.body);
+  return res.send(trade);
+});
+
 
 export default router;

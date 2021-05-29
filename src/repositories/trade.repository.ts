@@ -7,6 +7,18 @@ export interface IDeleteTradePayload {
   uniqTradeKey: string;
 }
 
+export interface ITradeCreatePayload {
+  count: number;
+  cost: number;
+  sum: number;
+  owner: string;
+  seller: string;
+  buyer: string;
+  resource: string;
+  uniqTradeKey: string;
+}
+
+
 export const getTrades = async (): Promise<Array<Trade>> => {
   const tradeRepository = getRepository(Trade);
   return tradeRepository.find();
