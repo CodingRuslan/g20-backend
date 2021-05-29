@@ -9,12 +9,12 @@ import {
 @Tags("Options")
 export default class OptionController {
   @Get("/")
-  public async getBuilds(): Promise<Array<Options>> {
+  public async getOptions(): Promise<Array<Options>> {
     return getOptions();
   }
 
   @Get("/:id")
-  public async getCountry(@Path() id: string): Promise<Options | null> {
+  public async getOption(@Path() id: string): Promise<Options | null> {
     return getOption(String(id));
   }
 }
