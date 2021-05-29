@@ -23,5 +23,11 @@ router.get('/closed-trades', async (req: Request, res: Response) => {
   return res.send(trades);
 });
 
+router.post('/delete', async (req: Request, res: Response) => {
+  const controller = new TradeController();
+  const trades = await controller.deleteTrade(req.body);
+  return res.send(trades);
+});
+
 
 export default router;
