@@ -1,10 +1,10 @@
 import express from "express";
-import { BuildController } from "../controllers"
+import { LinkController } from "../controllers"
 const router = express.Router();
 
 router.get("/", async (_req, res) => {
-  const controller = new BuildController();
-  const response = await controller.getBuilds();
+  const controller = new LinkController();
+  const response = await controller.getLinks();
   return res.send(response);
 });
 

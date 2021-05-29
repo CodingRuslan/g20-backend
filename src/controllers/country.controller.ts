@@ -20,8 +20,8 @@ export default class CountryController {
   //   return createCountry(body);
   // }
   //
-  // @Get("/:id")
-  // public async getCountry(@Path() id: string): Promise<Country | null> {
-  //   return getCountry(String(id));
-  // }
+  @Get("/:id")
+  public async getCountry(@Path() id: string): Promise<Country | null> {
+    return getCountry(String(id));
+  }
 }
