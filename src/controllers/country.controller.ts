@@ -5,7 +5,7 @@ import {
   createCountry,
   getCountry,
   ICountyPayload,
-} from "../repositories/country";
+} from "../repositories/country.repository";
 
 @Route("countries")
 @Tags("Country")

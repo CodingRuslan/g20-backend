@@ -2,7 +2,7 @@ import { Get, Route, Tags } from "tsoa";
 import {Link} from "../entities";
 import {
   getLinks,
-} from "../repositories/link";
+} from "../repositories/link.repository";
 
 @Route("links")
 @Tags("Link")

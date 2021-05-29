@@ -1,11 +1,9 @@
 import { Get, Route, Tags, Post, Body, Path } from "tsoa";
-import {Build, Country} from "../entities";
+import {Build} from "../entities";
 import {
   getBuilds,
-  createBuild,
   getBuild,
-  IBuildPayload,
-} from "../repositories/build";
+} from "../repositories/build.repository";
 
 @Route("builds")
 @Tags("Build")
