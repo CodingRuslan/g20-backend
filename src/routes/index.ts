@@ -1,6 +1,7 @@
 import express from "express";
 import PingController from "../controllers/ping";
 import CountryRouter from "./country.router";
+import BuildRouter from "./build.router"
 
 
 const router = express.Router();
@@ -12,5 +13,6 @@ router.get("/ping", async (_req, res) => {
 });
 
 router.use("/countries", CountryRouter);
+router.use("/builds", BuildRouter)
 
 export default router;

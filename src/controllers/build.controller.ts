@@ -11,7 +11,7 @@ import {
 @Tags("Build")
 export default class BuildController {
   @Get("/")
-  public async getCountries(): Promise<Array<Build>> {
+  public async getBuilds(): Promise<Array<Build>> {
     return getBuilds();
   }
 }
