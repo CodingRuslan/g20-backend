@@ -5,6 +5,7 @@ import BuildRouter from "./build.router"
 import LinkRouter from "./link.routes"
 import OptionsRouter from "./options.router"
 import ResourcesRouter from "./resources.router"
+import TradeRouter from "./trade.router"
 
 const router = express.Router();
 
@@ -19,5 +20,6 @@ router.use("/builds", BuildRouter)
 router.use("/options", OptionsRouter)
 router.use("/links", LinkRouter)
 router.use("/resources", ResourcesRouter)
+router.use("/trades", TradeRouter)
 
 export default router;
