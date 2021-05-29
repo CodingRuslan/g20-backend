@@ -16,9 +16,5 @@ router.post("/create-build", async (req, res) => {
   return res.send(response);
 });
 
-// router.post('/create-build', async (req: Request, res: Response) => {
-//   const newBuild = await resourceController.createNewBuild(req.body);
-//   return res.status(OK).send(newBuild);
-// });
 
 export default router;

@@ -1,8 +1,14 @@
 import express from "express";
-import { OptionController} from "../controllers"
+import { OptionController } from "../controllers"
 import { Request, Response } from 'express';
 
 const router = express.Router();
+
+router.get("/", async (req: Request, res: Response) => {
+  const controller = new OptionController();
+  const response = await controller.getOptions();
+  return res.send(response);
+});
 
 router.get('/is-game-going', async (req: Request, res: Response) => {
   const controller = new OptionController();

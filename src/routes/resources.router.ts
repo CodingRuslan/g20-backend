@@ -10,4 +10,10 @@ router.get("/", async (req: Request, res: Response) => {
   return res.send(response);
 });
 
+router.get('/add-resources', async (req: Request, res: Response) => {
+  const controller = new ResourceController();
+  await controller.addResources();
+  return res.send();
+});
+
 export default router;

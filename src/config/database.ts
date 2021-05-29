@@ -1,14 +1,4 @@
 import { ConnectionOptions } from "typeorm";
-import {
-  Country,
-  Trade,
-  Resource,
-  ResourceOwner,
-  Options,
-  Build,
-  IncreaseResources,
-  ResourceCountRelations,
-  Link } from '../entities'
 
 const config: ConnectionOptions = {
   type: "postgres",
@@ -17,9 +7,7 @@ const config: ConnectionOptions = {
   username: process.env.POSTGRES_USER || "postgres",
   password: process.env.POSTGRES_PASSWORD || "postgres",
   database: process.env.POSTGRES_DB || "postgres",
-  entities: [Country, Trade, Resource, ResourceOwner, Options,
-    Build, IncreaseResources, ResourceCountRelations, Link],
-  // entities: ["src/entities/*.ts"],
+  entities: ["src/entities/*.ts"],
   synchronize: true,
 };
 
