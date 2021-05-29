@@ -1,5 +1,5 @@
 import { Get, Route, Tags } from "tsoa";
-import {Trade} from "../entities";
+import {Trade, TradeStatus} from "../entities";
 import {
   getTrades,
 } from "../repositories/trade.repository";
@@ -20,4 +20,13 @@ export default class TradeController {
         {seller: null}, {buyer: null}
       ] });
   }
+
+  @Get("/closed-trades")
+  async getAllClosedTrades() {
+    const tradesRepository = getRepository(Trade);
+    return await tradesRepository.find({ relations: ['owner', 'buyer', 'resource', 'seller'], where: {
+        status: TradeStatus.Closed
+      } });
+  }
+
 }

@@ -17,5 +17,11 @@ router.get('/ads', async (req: Request, res: Response) => {
   return res.send(trades);
 });
 
+router.get('/closed-trades', async (req: Request, res: Response) => {
+  const controller = new TradeController();
+  const trades = await controller.getAllClosedTrades();
+  return res.send(trades);
+});
+
 
 export default router;
