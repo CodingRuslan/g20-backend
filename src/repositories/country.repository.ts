@@ -8,6 +8,11 @@ export interface ICountyPayload {
   money: number;
 }
 
+export interface IAddMoneyCountyPayload {
+  country: string,
+  money: number;
+}
+
 export const getCountries = async (): Promise<Array<Country>> => {
   const countryRepository = getRepository(Country);
   return countryRepository.find();

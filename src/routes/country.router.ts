@@ -1,12 +1,19 @@
 import express from "express";
 import { CountryController } from '../controllers';
+import { Request, Response } from 'express';
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
+router.get("/", async (req: Request, res: Response) => {
   const controller = new CountryController();
   const response = await controller.getCountries();
   return res.send(response);
+});
+
+router.post('/add-money', async (req: Request, res: Response) => {
+  const controller = new CountryController();
+  await controller.addMoney(req.body)
+  return res.status(200).send();
 });
 
 // router.post("/", async (req, res) => {

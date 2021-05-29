@@ -7,6 +7,7 @@ import {
   getResource,
 } from "../repositories/resourse.repository";
 
+
 @Route("resources")
 @Tags("Resources")
 export default class ResourceController {
